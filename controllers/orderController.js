@@ -31,7 +31,19 @@ exports.createorder=async(req,res)=>{
         await order.save();
         res.status(200).json("Order created successfully");
     }catch (err) {
-        res.status(500).json({ message: "Failed to create order", error: err });
+        res.status(500).json({ message: "Failed to create order", error: err });
     
 }
+}
+exports.getOrder=async(req,res)=>{
+    const {user_id}=req.user;
+    try{
+        const orders=await Order.find({user_id});
+        res.status(200).json(orders);
+        }
+        catch(err){
+            console.log(err);
+            res.status(400).json({message:"Error fetching orders"});
+            }
+
 }
