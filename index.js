@@ -8,7 +8,7 @@ const orderRoutes=require('./routes/orderRoute');
 const cors = require('cors');
 
 mongoose.connect(
-    "mongodb://localhost:27017/e_commerce"
+    "mongodb+srv://ranjithat2022ece:ranjitha123@cluster0.3aaxkdu.mongodb.net/e_commerce"
 ).then(()=>{
     console.log("connected to database");
 });
